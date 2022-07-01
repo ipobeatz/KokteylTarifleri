@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="200sp"
-    android:layout_height="wrap_content"
+    android:layout_width="165dp"
+    android:layout_height="165dp"
     android:layout_margin="12dp">
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="190dp"
-        android:layout_height="82dp"
-        android:layout_margin="1dp"
-        app:cardBackgroundColor="#F6F6F6"
+        android:layout_width="168dp"
+        android:layout_height="170dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="30dp"
         app:cardElevation="3dp"
         app:cardMaxElevation="1dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
+        app:cardUseCompatPadding="true">
 
-
-        >
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            app:srcCompat="@drawable/ic_launcher_background"
-
-            />
 
         <TextView
             android:id="@+id/recyclerViewTextView"
-            android:layout_width="200dp"
+            android:layout_width="156dp"
             android:layout_height="46dp"
-            android:layout_margin="5dp"
+            android:layout_gravity="bottom|center"
             android:gravity="center"
             android:text="example"
             android:textColor="#000000"
             android:textSize="18sp">
 
         </TextView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center|top"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
 
     </androidx.cardview.widget.CardView>
