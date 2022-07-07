@@ -28,8 +28,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
         return new KokteylHolder(recyclerRowBinding);
 
 
-
-
     }
 
     @Override
@@ -39,7 +37,7 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
 
 
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(holder.itemView.getContext(), Details.class);
+            Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
             Singleton singleton = Singleton.getInstance();
             singleton.setChosenCocktail(AdapterArrayList.get(position));
 
@@ -61,7 +59,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
             this.binding = binding;
 
         }
-
 
 
     }

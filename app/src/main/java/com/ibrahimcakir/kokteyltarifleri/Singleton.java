@@ -1,19 +1,11 @@
 package com.ibrahimcakir.kokteyltarifleri;
 
 public class Singleton {
-    private Cocktail selectedCocktail;
     private static Singleton singleton;
+    private Cocktail selectedCocktail;
 
     private Singleton() {
 
-    }
-
-    public Cocktail getSelectedCocktail() {
-        return selectedCocktail;
-    }
-
-    public void setChosenCocktail(Cocktail selectedCocktail) {
-        this.selectedCocktail = selectedCocktail;
     }
 
     public static Singleton getInstance() {
@@ -23,6 +15,14 @@ public class Singleton {
 
         return singleton;
 
+    }
+
+    public Cocktail getSelectedCocktail() {
+        return selectedCocktail;
+    }
+
+    public void setChosenCocktail(Cocktail selectedCocktail) {
+        this.selectedCocktail = selectedCocktail;
     }
 
 }
