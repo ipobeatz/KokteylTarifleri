@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="how you doin" />
+        android:text="example"
+        android:id="@+id/noteTextView"/>
 
 </RelativeLayout>

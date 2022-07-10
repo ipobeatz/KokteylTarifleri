@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.ibrahimcakir.kokteyltarifleri.Adapter.CustomViewPager;
-import com.ibrahimcakir.kokteyltarifleri.Fragments.ExampleFragment;
+import com.ibrahimcakir.kokteyltarifleri.Fragments.HistoryFragment;
 import com.ibrahimcakir.kokteyltarifleri.Fragments.HomeFragment;
 import com.ibrahimcakir.kokteyltarifleri.Fragments.NoteFragment;
 import com.ibrahimcakir.kokteyltarifleri.databinding.ActivityMainBinding;
@@ -22,11 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList AdapterArrayList;
     private ActivityMainBinding binding;
-    private ViewPager mViewPager;
-    private CustomViewPager mAdapter;
-    private TabLayout mTablayout;
-    int count = 0;
-
+    private String myString = "hello";
 
 
 
@@ -41,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
-
-
-
         //example();
 
         AdapterArrayList = new ArrayList<>();
@@ -55,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 "3.buz küpleri ile dolu bir shakera 50ml tekila ve 20ml cointreau veya triple sec dökün.\n" +
                 "4.15 ml limon suyu ekleyin.\n" +
                 "5.iyice çalkalayın ve bir margarita bardağına süzün",
-                "margarita bir klasiktir ve Amerika Birleşik Devletleri'ndeki en popüler tekila bazlı kokteyldir.", R.drawable.margarita);
+                "margarita bir klasiktir ve Amerika Birleşik Devletleri'ndeki en popüler tekila bazlı kokteyldir.", R.drawable.margarita,"history moruk");
 
         Cocktail irishCoffee = new Cocktail("irish coffee", "1.Öncelikle kadehi sıcak suyla doldurup önden ısıtıyoruz.\n" +
                 "2.kadehe 300ml filtre kahve koyun.\n" +
                 "3.50ml viski ekleyin ve bir çay kaşığı şeker veya 5ml şeker şurubu ekleyin. şeker eriyene kadar karıştırın.\n" +
                 "4.kremayı dikkatlice üstüne dökün", "Bu kokteylin efsanelerinden birine göre, orijinal tarifi Joseph Sheridan tarafından 1940 yılında" +
-                " bir İrlanda havalimanına gelen bir grup yolcunun kahveye viski ekleyerek onları ısıtmaya çalışmasıyla oluşturuldu. şimdi bir IBA resmi kokteyli", R.drawable.irishcoffee);
-
+                " bir İrlanda havalimanına gelen bir grup yolcunun kahveye viski ekleyerek onları ısıtmaya çalışmasıyla oluşturuldu. şimdi bir IBA resmi kokteyli", R.drawable.irishcoffee,"nedir yani");
+/*
         Cocktail ginTonic = new Cocktail("gin tonic", "1.bir highball bardağını buzla doldurun. \n" +
                 "2.buzun üzerine 50ml cin ve 100ml tonik dökün \n" +
                 "3.hafifçe karıştırın ve bir limon dilimi ile süsleyin", "basit ve her zaman iyi cin tonik oranı zevkinize göre değişebilir", R.drawable.gintonic);
@@ -102,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
                 "4.limon dilimi ile süsleyiniz.", "Lemon Drop Martini klasik kokteyllerden biridir. Sert olmasına rağmen tatlı bir kokteyl olduğu için sosyal içicilerin tercih ettiği bir kokteyldir."
                 , R.drawable.lemondrop);
 
-
+*/
         AdapterArrayList.add(margarita);
         AdapterArrayList.add(irishCoffee);
-        AdapterArrayList.add(ginTonic);
+        /*AdapterArrayList.add(ginTonic);
         AdapterArrayList.add(mojito);
         AdapterArrayList.add(kamikaze);
         AdapterArrayList.add(gimlet);
@@ -135,12 +128,5 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(mLayoutManager);
     }
 
-    /*private void openFragment(){
-        Bundle bundle = new Bundle();
-        bundle.putString("count",String.valueOf(count));
-        Fragment fragment = new HomeFragment();
-        fragment.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainTableLayout,fragment).commit();
-        */
 
     }

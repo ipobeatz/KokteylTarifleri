@@ -12,9 +12,7 @@ public class Singleton {
         if (singleton == null) {
             singleton = new Singleton();
         }
-
         return singleton;
-
     }
 
     public Cocktail getSelectedCocktail() {

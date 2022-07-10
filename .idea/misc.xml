@@ -12,10 +12,11 @@
         <entry key="app/src/main/res/layout/fragment_c.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_custom_view_pager.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_example.xml" value="0.25226449275362317" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.2427536231884058" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_note.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/recycler_adap.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.21096343994140623" />
+        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.44334716796875007" />
       </map>
     </option>
   </component>

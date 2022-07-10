@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.ibrahimcakir.kokteyltarifleri.Adapter.CustomViewPager;
-import com.ibrahimcakir.kokteyltarifleri.Fragments.ExampleFragment;
+import com.ibrahimcakir.kokteyltarifleri.Fragments.HistoryFragment;
 import com.ibrahimcakir.kokteyltarifleri.Fragments.HomeFragment;
 import com.ibrahimcakir.kokteyltarifleri.Fragments.NoteFragment;
 import com.ibrahimcakir.kokteyltarifleri.databinding.ActivityDetailBinding;
@@ -25,14 +25,15 @@ public class DetailActivity extends AppCompatActivity {
         binding = ActivityDetailBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        example();
         Singleton singleton = Singleton.getInstance();
         Cocktail selectedCocktail = singleton.getSelectedCocktail();
+        example();
 
         binding.textView1.setText(selectedCocktail.name);
         binding.textView2.setText(selectedCocktail.cocktail);
         binding.textView3.setText(selectedCocktail.prepare);
         binding.imageView.setImageResource(selectedCocktail.image);
+        binding.mainTableLayout.setupWithViewPager(binding.viewPager);
 
     }
 
@@ -42,7 +43,7 @@ public class DetailActivity extends AppCompatActivity {
 
         mAdapter = new CustomViewPager(getSupportFragmentManager(),getApplicationContext());
 
-        mAdapter.addFragment(new ExampleFragment(),"example");
+        mAdapter.addFragment(new HistoryFragment(),"history");
         mAdapter.addFragment(new HomeFragment(),"home");
         mAdapter.addFragment(new NoteFragment(),"note");
         mViewPager.setAdapter(mAdapter);

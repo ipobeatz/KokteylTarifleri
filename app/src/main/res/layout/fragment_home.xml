@@ -7,10 +7,11 @@
 
 
     <TextView
+        android:id="@+id/homeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/hello_blank_fragment"
-        android:id="@+id/tv_count"/>
+        android:layout_margin="20dp"
+        android:text="example" />
 
 </RelativeLayout>
