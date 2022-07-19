@@ -39,6 +39,6 @@ public class NoteFragment extends Fragment {
         Singleton singleton = Singleton.getInstance();
         Cocktail selectedCocktail = singleton.getSelectedCocktail();
         //3- Datayı set et.
-        noteText.setText(selectedCocktail.history);
+        noteText.setText(selectedCocktail.prepare);
     }
 }

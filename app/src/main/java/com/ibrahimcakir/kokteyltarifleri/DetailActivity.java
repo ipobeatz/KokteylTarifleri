@@ -30,10 +30,10 @@ public class DetailActivity extends AppCompatActivity {
         example();
 
         binding.textView1.setText(selectedCocktail.name);
-        binding.textView2.setText(selectedCocktail.cocktail);
-        binding.textView3.setText(selectedCocktail.prepare);
-        binding.imageView.setImageResource(selectedCocktail.image);
         binding.mainTableLayout.setupWithViewPager(binding.viewPager);
+        binding.mainTableLayout.setupWithViewPager(binding.viewPager);
+        binding.imageView.setImageResource(selectedCocktail.image);
+
 
     }
 
@@ -43,9 +43,9 @@ public class DetailActivity extends AppCompatActivity {
 
         mAdapter = new CustomViewPager(getSupportFragmentManager(),getApplicationContext());
 
-        mAdapter.addFragment(new HistoryFragment(),"history");
-        mAdapter.addFragment(new HomeFragment(),"home");
-        mAdapter.addFragment(new NoteFragment(),"note");
+        mAdapter.addFragment(new HistoryFragment(),"malzemeler");
+        mAdapter.addFragment(new HomeFragment(),"yapılış");
+        mAdapter.addFragment(new NoteFragment(),"hikaye");
         mViewPager.setAdapter(mAdapter);
 
         mTablayout.setupWithViewPager(mViewPager);

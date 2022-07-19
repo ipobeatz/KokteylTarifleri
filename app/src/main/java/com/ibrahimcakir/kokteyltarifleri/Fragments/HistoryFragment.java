@@ -22,7 +22,7 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         Singleton singleton = Singleton.getInstance();
         Cocktail selectedCocktail = singleton.getSelectedCocktail();
-        String xx = selectedCocktail.name;
+        String xx = selectedCocktail.ingredients;
         return inflater.inflate(R.layout.fragment_history, container, false);
 
     }
@@ -36,7 +36,7 @@ public class HistoryFragment extends Fragment {
         Singleton singleton = Singleton.getInstance();
         Cocktail selectedCocktail = singleton.getSelectedCocktail();
         //3- Datayı set et.
-        historyText.setText(selectedCocktail.history);
+        historyText.setText(selectedCocktail.ingredients);
     }
 
 }

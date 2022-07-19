@@ -43,6 +43,6 @@ public class HomeFragment extends Fragment {
         Singleton singleton = Singleton.getInstance();
         Cocktail selectedCocktail = singleton.getSelectedCocktail();
         //3- Datayı set et.
-        historyText.setText(selectedCocktail.prepare);
+        historyText.setText(selectedCocktail.cocktail);
     }
 }
