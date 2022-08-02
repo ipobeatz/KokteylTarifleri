@@ -1,4 +1,4 @@
-package com.ibrahimcakir.kokteyltarifleri;
+package com.ibrahimcakir.kokteyltarifleri.Adapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,12 +7,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ibrahimcakir.kokteyltarifleri.Cocktail;
+import com.ibrahimcakir.kokteyltarifleri.DetailActivity;
+import com.ibrahimcakir.kokteyltarifleri.Singleton;
 import com.ibrahimcakir.kokteyltarifleri.databinding.RecyclerRowBinding;
 
 import java.util.ArrayList;
 
-public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.KokteylHolder> {
-
+public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.KokteylHolder> { 
     ArrayList<Cocktail> AdapterArrayList;
 
 
@@ -20,13 +22,11 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
         this.AdapterArrayList = AdapterArrayList;
     }
 
-
     @NonNull
     @Override
     public KokteylHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         RecyclerRowBinding recyclerRowBinding = RecyclerRowBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new KokteylHolder(recyclerRowBinding);
-
 
     }
 
@@ -52,7 +52,7 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
     }
 
     public class KokteylHolder extends RecyclerView.ViewHolder {
-        private RecyclerRowBinding binding;
+        private final RecyclerRowBinding binding;
 
         public KokteylHolder(RecyclerRowBinding binding) {
             super(binding.getRoot());

@@ -1,31 +1,32 @@
 package com.ibrahimcakir.kokteyltarifleri;
+
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
-import com.ibrahimcakir.kokteyltarifleri.Adapter.CustomViewPager;
-import com.ibrahimcakir.kokteyltarifleri.Fragments.HistoryFragment;
-import com.ibrahimcakir.kokteyltarifleri.Fragments.HomeFragment;
-import com.ibrahimcakir.kokteyltarifleri.Fragments.NoteFragment;
+import com.ibrahimcakir.kokteyltarifleri.Adapter.CocktailAdapter;
 import com.ibrahimcakir.kokteyltarifleri.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList AdapterArrayList;
+    ArrayList adapterArrayList = new ArrayList<Cocktail>();
+    ArrayList arrayList;
+
     private ActivityMainBinding binding;
-    private String myString = "hello";
 
-
-
+    //ListView listView;
+    //ArrayAdapter<String> arrayAdapter;
+    //RecyclerView recyclerView;
 
 
     @Override
@@ -37,28 +38,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
-        //example();
-
-        AdapterArrayList = new ArrayList<>();
 
 
+        /*recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,name);
+
+*/
 
         Cocktail margarita = new Cocktail("margarita", "1.Kokteyl bardaklarının ağız kısmına limon sürüp tuza bulayın.\n" +
                 " 2.Shaker'da tekila, portakal likörü, limon suyu ve buz parçalarını iyice çalkalayın.\n" +
                 "3.buz küpleri ile dolu bir shakera 50ml tekila ve 20ml cointreau veya triple sec dökün.\n" +
                 "4.15 ml limon suyu ekleyin.\n" +
                 "5.iyice çalkalayın ve bir margarita bardağına süzün",
-                "margarita bir klasiktir ve Amerika Birleşik Devletleri'ndeki en popüler tekila bazlı kokteyldir.", R.drawable.margarita,"1.50ml Tekila\n"+
-                "2.30ml Cointreau\n"+
-                "3.yarım lime\n"+
-                "4.2gr tuz\n"+
-                "5.100gr buz");
+                "margarita bir klasiktir ve Amerika Birleşik Devletleri'ndeki en popüler tekila bazlı kokteyldir.", R.drawable.margarita,
+                new ArrayList<>(Arrays.asList(new Ingredients("50ml Tekila"), new Ingredients("30ml Cointreau"), new Ingredients("yarım lime"), new Ingredients("2 gr tuz"),new Ingredients("100 gr buz"))));
 
         Cocktail irishCoffee = new Cocktail("irish coffee", "1.Öncelikle kadehi sıcak suyla doldurup önden ısıtıyoruz.\n" +
                 "2.kadehe 300ml filtre kahve koyun.\n" +
                 "3.50ml viski ekleyin ve bir çay kaşığı şeker veya 5ml şeker şurubu ekleyin. şeker eriyene kadar karıştırın.\n" +
                 "4.kremayı dikkatlice üstüne dökün", "Bu kokteylin efsanelerinden birine göre, orijinal tarifi Joseph Sheridan tarafından 1940 yılında" +
-                " bir İrlanda havalimanına gelen bir grup yolcunun kahveye viski ekleyerek onları ısıtmaya çalışmasıyla oluşturuldu. şimdi bir IBA resmi kokteyli", R.drawable.irishcoffee,"");
+                " bir İrlanda havalimanına gelen bir grup yolcunun kahveye viski ekleyerek onları ısıtmaya çalışmasıyla oluşturuldu. şimdi bir IBA resmi kokteyli", R.drawable.irishcoffee, new ArrayList<>(Arrays.asList(new Ingredients("50ml viski"), new Ingredients("120ml kahve"), new Ingredients("50ml krema"),new Ingredients("1 çay kaşığı şeker"))));
 /*
         Cocktail ginTonic = new Cocktail("gin tonic", "1.bir highball bardağını buzla doldurun. \n" +
                 "2.buzun üzerine 50ml cin ve 100ml tonik dökün \n" +
@@ -100,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 , R.drawable.lemondrop);
 
 */
-        AdapterArrayList.add(margarita);
-        AdapterArrayList.add(irishCoffee);
+        adapterArrayList.add(margarita);
+        adapterArrayList.add(irishCoffee);
         /*AdapterArrayList.add(ginTonic);
         AdapterArrayList.add(mojito);
         AdapterArrayList.add(kamikaze);
@@ -118,19 +118,52 @@ public class MainActivity extends AppCompatActivity {
         AdapterArrayList.add(example1);
         AdapterArrayList.add(example);
         AdapterArrayList.add(example1);
- */
 
+
+         */
 
 
 
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        CocktailAdapter cocktailAdapter = new CocktailAdapter(AdapterArrayList);
+        CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
         binding.recyclerView.setAdapter(cocktailAdapter);
+
 
         GridLayoutManager mLayoutManager = new GridLayoutManager((this), 2);
         binding.recyclerView.setLayoutManager(mLayoutManager);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint("Arama yap");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                ArrayList filteredCocktailListData = new ArrayList<Cocktail>();
+                for (Object cocktailData : adapterArrayList) {
+                    if (((Cocktail) cocktailData).name.contains(s)) {
+                        filteredCocktailListData.add(cocktailData);
+                    }
+                }
+                binding.recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+                CocktailAdapter cocktailAdapter = new CocktailAdapter(filteredCocktailListData);
+                binding.recyclerView.setAdapter(cocktailAdapter);
+
+                GridLayoutManager mLayoutManager = new GridLayoutManager((MainActivity.this), 2);
+                binding.recyclerView.setLayoutManager(mLayoutManager);
+                return false;
+            }
+        });
+        return true;
     }
+}
