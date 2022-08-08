@@ -25,10 +25,14 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            android:text="agaaa"
+            android:text="example"
+            android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
+
+
     </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

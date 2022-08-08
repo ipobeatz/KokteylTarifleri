@@ -35,12 +35,10 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
         holder.binding.recyclerViewTextView.setText(AdapterArrayList.get(position).name);
         holder.binding.imageView2.setImageResource(AdapterArrayList.get(position).image);
 
-
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
             Singleton singleton = Singleton.getInstance();
             singleton.setChosenCocktail(AdapterArrayList.get(position));
-
 
             holder.itemView.getContext().startActivity(intent);
         });
@@ -59,8 +57,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
             this.binding = binding;
 
         }
-
-
     }
 }
 

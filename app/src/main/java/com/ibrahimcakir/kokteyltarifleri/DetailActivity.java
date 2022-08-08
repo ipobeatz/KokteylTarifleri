@@ -20,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     private CustomViewPager mAdapter;
     private TabLayout mTablayout;
     Singleton singleton = Singleton.getInstance();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDetailBinding.inflate(getLayoutInflater());
@@ -45,7 +46,6 @@ public class DetailActivity extends AppCompatActivity {
         mAdapter.addFragment(new HomeFragment(),"yapılış");
         mAdapter.addFragment(new NoteFragment(),"hikaye");
         mViewPager.setAdapter(mAdapter);
-
         mTablayout.setupWithViewPager(mViewPager);
 
     }

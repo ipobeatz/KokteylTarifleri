@@ -7,7 +7,6 @@ public class Cocktail implements Serializable {
     public String name;
     public String cocktail;
     public String prepare;
-
     public int image;
     public List<Ingredients> ingredientsList;
 
@@ -15,7 +14,6 @@ public class Cocktail implements Serializable {
         this.name = name;
         this.cocktail = cocktail;
         this.prepare = prepare;
-
         this.image = image;
         this.ingredientsList = ingredientsList;
     }

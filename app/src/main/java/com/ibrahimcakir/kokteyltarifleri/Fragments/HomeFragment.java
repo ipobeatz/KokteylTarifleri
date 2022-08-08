@@ -30,8 +30,6 @@ public class HomeFragment extends Fragment {
         String xx = selectedCocktail.name;
         return inflater.inflate(R.layout.fragment_home, container, false);
 
-
-
     }
 
     @Override
