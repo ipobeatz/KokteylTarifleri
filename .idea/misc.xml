@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -8,7 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.239" />
         <entry key="app/src/main/res/layout/aaa.xml" value="0.3031735406405684" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.3055618286132813" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13665377851845562" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3202109074247056" />
         <entry key="app/src/main/res/layout/blank_fragment.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_c.xml" value="0.25226449275362317" />
@@ -19,12 +18,12 @@
         <entry key="app/src/main/res/layout/fragment_note.xml" value="0.25226449275362317" />
         <entry key="app/src/main/res/layout/fragment_row.xml" value="0.2438949584960937" />
         <entry key="app/src/main/res/layout/recycler_adap.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.34289093017578126" />
+        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.2953125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

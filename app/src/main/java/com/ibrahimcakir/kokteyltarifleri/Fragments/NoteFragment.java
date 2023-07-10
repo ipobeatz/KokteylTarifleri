@@ -18,8 +18,6 @@ import com.ibrahimcakir.kokteyltarifleri.Singleton;
 
 public class NoteFragment extends Fragment {
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,6 +31,7 @@ public class NoteFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
         TextView noteText = view.findViewById(R.id.noteTextView);
         //2- Datayı çek.

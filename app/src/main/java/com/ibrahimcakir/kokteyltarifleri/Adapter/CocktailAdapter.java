@@ -3,6 +3,8 @@ package com.ibrahimcakir.kokteyltarifleri.Adapter;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,15 +15,14 @@ import com.ibrahimcakir.kokteyltarifleri.Singleton;
 import com.ibrahimcakir.kokteyltarifleri.databinding.RecyclerRowBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.KokteylHolder> { 
+public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.KokteylHolder> {
     ArrayList<Cocktail> AdapterArrayList;
-
 
     public CocktailAdapter(ArrayList<Cocktail> AdapterArrayList) {
         this.AdapterArrayList = AdapterArrayList;
     }
-
     @NonNull
     @Override
     public KokteylHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +40,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
             Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
             Singleton singleton = Singleton.getInstance();
             singleton.setChosenCocktail(AdapterArrayList.get(position));
-
             holder.itemView.getContext().startActivity(intent);
         });
     }
@@ -48,6 +48,7 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Koktey
     public int getItemCount() {
         return AdapterArrayList.size();
     }
+
 
     public class KokteylHolder extends RecyclerView.ViewHolder {
         private final RecyclerRowBinding binding;
