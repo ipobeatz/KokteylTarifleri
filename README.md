@@ -6,11 +6,11 @@
 
 
 
-| Popular | Top Rated |  Details
+| Coctails | Filtered Coctails |  Search View
 |:-:|:-:|:-:|
 | ![1](app/src/main/res/drawable/images1.png) | ![2](app/src/main/res/drawable/images2.png) | ![3](app/src/main/res/drawable/images3.png)
-| TV Show | Home Dark |  Menu Screen | Settings
-| ![5](app/src/main/res/drawable/images4.png) | ![6](app/src/main/res/drawable/images5.png) | ![7](drawable/images1.png)
+| Filtered Search View | Details |  Details of Making | Settings
+| ![5](app/src/main/res/drawable/images4.png) | ![6](app/src/main/res/drawable/images5.png) | ![7](app/src/main/res/drawable/images6.png)
 
 
 
