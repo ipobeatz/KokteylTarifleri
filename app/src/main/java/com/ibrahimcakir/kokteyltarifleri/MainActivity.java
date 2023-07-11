@@ -209,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
             binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
             CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
             binding.recyclerView.setAdapter(cocktailAdapter);
-
             isFilteredButton1 = false;
         }
 
