@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     tools:context=".MainActivity"
-    android:backgroundTint="#2A2A2A">
+    android:backgroundTint="#13232F">
 
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_width="362dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#3D3D3D"
+        android:backgroundTint="#284343"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.591"
