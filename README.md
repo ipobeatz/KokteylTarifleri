@@ -2,7 +2,7 @@
 
 
 <a href="https://www.android.com"><img src="https://img.shields.io/badge/Android-02303A.svg?style=for-the-badge&logo=android&logoColor=dark"></a>
-<a href="https://kotlinlang.org"><img src="https://img.shields.io/badge/kotlin%20-%23FF6F00.svg?&style=for-the-badge&logo=kotlin&logoColor=dark" /> </a>
+
 
 
 
@@ -29,15 +29,7 @@
 - Java 8
 - Latest version of Android SDK and Android Build Tools
 
-### API Key
 
-The app uses themoviedb.org API to get movie information and posters. You must provide your own [API key] in order to build the app (or you can use mine).
-
-Just put your API key into the app module's `utils/constants` file (create the file if it does not exist already):
-
-```kotlin
-const val TMDb_API_KEY = "abc123"
-```
 
 ## Components
 
@@ -64,7 +56,7 @@ const val TMDb_API_KEY = "abc123"
 
 
 ![jetpack](images/jetpack.png)
-![kotlin](images/kotlin.png)
+
 
 
 
