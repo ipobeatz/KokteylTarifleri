@@ -1,5 +1,6 @@
 package com.ibrahimcakir.kokteyltarifleri;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList arrayList;
     private String lastFilter = "";
     private boolean isFilteredButton1 = false;
+    private boolean isButton1ColorChanged = false;
     private boolean isFilteredButton2 = false;
     private boolean isFilteredButton3 = false;
     private boolean isFilteredButton4 = false;
@@ -191,7 +193,14 @@ public class MainActivity extends AppCompatActivity {
     public void onButton1Clicked(View view) {
         String filterKeyword = "meyve aromalılar";
 
-        if (!isFilteredButton1) {
+        if (isFilteredButton1) {
+            binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
+            binding.recyclerView.setAdapter(cocktailAdapter);
+            isFilteredButton1 = false;
+
+            binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+        } else {
             ArrayList<Cocktail> filteredCocktailListData = new ArrayList<>();
 
             for (Object cocktailData : adapterArrayList) {
@@ -204,12 +213,23 @@ public class MainActivity extends AppCompatActivity {
             CocktailAdapter cocktailAdapter = new CocktailAdapter(filteredCocktailListData);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button1.setBackgroundColor(getColor(R.color.changed_button_color));
+
+            // Diğer filtreli butonların durumunu kontrol et
+            if (isFilteredButton2) {
+                binding.button2.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton2 = false;
+            }
+            if (isFilteredButton3) {
+                binding.button3.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton3 = false;
+            }
+            if (isFilteredButton4) {
+                binding.button4.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton4 = false;
+            }
+
             isFilteredButton1 = true;
-        } else {
-            binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
-            binding.recyclerView.setAdapter(cocktailAdapter);
-            isFilteredButton1 = false;
         }
 
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 2);
@@ -220,6 +240,12 @@ public class MainActivity extends AppCompatActivity {
         String filterKeyword = "espresso bazlılar";
 
         if (!isFilteredButton2) {
+            if (isFilteredButton1) {
+                // Button1 aktifken Button2 tıklandığında Button1'i pasif hale getir
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+
             ArrayList<Cocktail> filteredCocktailListData = new ArrayList<>();
 
             for (Object cocktailData : adapterArrayList) {
@@ -233,12 +259,29 @@ public class MainActivity extends AppCompatActivity {
             CocktailAdapter cocktailAdapter = new CocktailAdapter(filteredCocktailListData);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button2.setBackgroundColor(getColor(R.color.changed_button_color));
+
+            // Diğer filtreli butonların durumunu kontrol et
+            if (isFilteredButton1) {
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+            if (isFilteredButton3) {
+                binding.button3.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton3 = false;
+            }
+            if (isFilteredButton4) {
+                binding.button4.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton4 = false;
+            }
+
             isFilteredButton2 = true;
         } else {
             binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
             CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button2.setBackgroundColor(getColor(R.color.default_button_color));
             isFilteredButton2 = false;
         }
 
@@ -250,6 +293,12 @@ public class MainActivity extends AppCompatActivity {
         String filterKeyword = "hafif alkollüler";
 
         if (!isFilteredButton3) {
+            if (isFilteredButton1) {
+                // Button1 aktifken Button3 tıklandığında Button1'i pasif hale getir
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+
             ArrayList<Cocktail> filteredCocktailListData = new ArrayList<>();
 
             for (Object cocktailData : adapterArrayList) {
@@ -263,12 +312,29 @@ public class MainActivity extends AppCompatActivity {
             CocktailAdapter cocktailAdapter = new CocktailAdapter(filteredCocktailListData);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button3.setBackgroundColor(getColor(R.color.changed_button_color));
+
+            // Diğer filtreli butonların durumunu kontrol et
+            if (isFilteredButton1) {
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+            if (isFilteredButton2) {
+                binding.button2.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton2 = false;
+            }
+            if (isFilteredButton4) {
+                binding.button4.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton4 = false;
+            }
+
             isFilteredButton3 = true;
         } else {
             binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
             CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button3.setBackgroundColor(getColor(R.color.default_button_color));
             isFilteredButton3 = false;
         }
 
@@ -280,6 +346,12 @@ public class MainActivity extends AppCompatActivity {
         String filterKeyword = "sert alkollüler";
 
         if (!isFilteredButton4) {
+            if (isFilteredButton1) {
+                // Button1 aktifken Button4 tıklandığında Button1'i pasif hale getir
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+
             ArrayList<Cocktail> filteredCocktailListData = new ArrayList<>();
 
             for (Object cocktailData : adapterArrayList) {
@@ -293,12 +365,29 @@ public class MainActivity extends AppCompatActivity {
             CocktailAdapter cocktailAdapter = new CocktailAdapter(filteredCocktailListData);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button4.setBackgroundColor(getColor(R.color.changed_button_color));
+
+            // Diğer filtreli butonların durumunu kontrol et
+            if (isFilteredButton1) {
+                binding.button1.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton1 = false;
+            }
+            if (isFilteredButton2) {
+                binding.button2.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton2 = false;
+            }
+            if (isFilteredButton3) {
+                binding.button3.setBackgroundColor(getColor(R.color.default_button_color));
+                isFilteredButton3 = false;
+            }
+
             isFilteredButton4 = true;
         } else {
             binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
             CocktailAdapter cocktailAdapter = new CocktailAdapter(adapterArrayList);
             binding.recyclerView.setAdapter(cocktailAdapter);
 
+            binding.button4.setBackgroundColor(getColor(R.color.default_button_color));
             isFilteredButton4 = false;
         }
 

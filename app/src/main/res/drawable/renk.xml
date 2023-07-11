@@ -1,4 +1,3 @@
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@color/black" />
-    <item android:drawable="@color/purple_700" />
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/default_button_color" /> <!-- Varsayılan buton rengi -->
+</shape>
