@@ -24,16 +24,12 @@
 
 ## Setup
 
-### Requirements
-
-- Java 8
-- Latest version of Android SDK and Android Build Tools
 
 
 
 ## Components
 
-* [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous programming.
+*  [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous programming.
 * [Dagger Hilt](https://dagger.dev/hilt/) for dependency injection.
 * [JetPack](https://developer.android.com/jetpack)
     + [DataStore]()
