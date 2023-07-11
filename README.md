@@ -52,10 +52,7 @@
 * [Material-Components](https://github.com/material-components/material-components-android) - Material design components like ripple animation, cardView.
 
 
-## Scorecards
 
-
-![jetpack](images/jetpack.png)
 
 
 
